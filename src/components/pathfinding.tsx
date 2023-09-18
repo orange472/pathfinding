@@ -42,7 +42,7 @@ export default function Pathfinding(props: any) {
     "Click the pen to edit then play to start!"
   );
 
-  var board: Cell[][] = [];
+  const [board] = React.useState<Cell[][]>([]);
 
   const handleClick = (e: { target: any }) => {
     if (!start) {
@@ -309,7 +309,7 @@ export default function Pathfinding(props: any) {
           : `Distance: ${path.length} blocks (inclusive)`
       );
     }
-  }, [start, board, astar]);
+  }, [start, board]);
 
   return (
     <div className="pathfinding-container">
